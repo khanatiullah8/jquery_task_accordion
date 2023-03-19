@@ -1,0 +1,236 @@
+@charset "utf-8";
+/* ==========================================================================
+   1. CSS Reset Code
+   ========================================================================== */
+
+/* 1.1. Eric Meyers Reset
+   http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+   ========================================================================== */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p,
+blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img,
+ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center,
+dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody,
+tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure,
+figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* Force scrollbar */
+html { overflow-y: scroll; }
+
+/* Align radios and text inputs with their label */
+
+input[type='radio'] { vertical-align: text-bottom; }
+
+/* Hand cursor on clickable input elements */
+label,
+input[type='button'],
+input[type='submit'],
+button {
+  cursor: pointer;
+}
+
+strong {
+  font-weight: bold;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+em { font-style: italic; }
+
+img {
+  width: 100%;
+  border: 0;
+  vertical-align: middle;
+}
+
+sub,
+sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 55%;
+  line-height: 0;
+}
+
+sup { top: -.7em; }
+sub { bottom: -.25em; }
+
+/* 1.2. Clear Fix
+   ========================== */
+
+.cf:before,
+.cf:after {
+  display: table;
+  content: " ";
+}
+
+.cf:after { clear: both; }
+.cf { *zoom: 1; }
+
+/*for all*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --clr-grey: #777b7f;
+  --clr-black: #2a2e37;
+  --clr-yellow: #f5f5dc;
+  --clr-orange: #e9967a;
+  --clr-white: #fff;
+
+}
+
+body {
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
+
+a { 
+  display: inline-block;
+  text-decoration: none; 
+}
+
+li {
+  display: inline-block;
+  list-style-type: none;
+}
+
+::first-letter {
+  text-transform: uppercase;
+}
+
+span { display: inline-block; }
+
+/*for wrapper*/
+.wrapper {
+  max-width: 1360px;
+  width: 86%; 
+  margin: 0 auto;
+}
+/*=================================
+  Header styling starts here
+=================================*/
+
+header .wrapper {
+  width: 100%;
+  padding: 10px;
+  background-color: var(--clr-black);
+}
+
+header h1 {
+  color: var(--clr-white);
+  font-size: 40px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+.accordion .wrapper {
+  width: 45%;
+  margin-top: 30px;
+}
+
+.list-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.list-items li {
+  width: 100%;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.list-items li:first-child { border-top: 1px solid rgba(0,0,0,0.1); }
+
+.list-items h3 {
+  padding: 25px;
+  position: relative;
+  background-color: var(--clr-yellow);
+  color: var(--clr-black);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.list-items p {
+  padding: 25px;
+  display: none;
+  position: relative;
+  background-color: var(--clr-orange);
+  color: var(--clr-black);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.open-close-box {
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  cursor: pointer;
+}
+
+.open, 
+.close {
+  width: 3px;
+  height: 20px;
+  border-radius: 2px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  background-color: var(--clr-grey);
+  text-indent: -99999px;
+  transition: all .3s;
+}
+
+.open {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.close {
+  transform: translateX(-50%) rotate(0deg);
+}
+
+.open.active {
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.close.active{
+  transform: translateX(-50%) rotate(135deg);
+}
+
+/*=================================
+  main styling ends here
+=================================*/
